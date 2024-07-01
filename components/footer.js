@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
@@ -9,12 +10,15 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-wrap justify-between">
           {/* Logo and social icons */}
-          <div className="w-full md:w-1/4 mb-6 md:mb-0">
+          <div className="flex flex-col items-start justify-center w-full md:w-1/4 mb-6 md:mb-0">
             <div className="flex items-center mb-4">
-              <div className="bg-red-800 dark:bg-red-700 text-white p-2 rounded-md mr-2">
-                <span className="font-bold">KD</span>
-              </div>
-              <span className="text-xl font-semibold dark:text-white">KAZIDESK</span>
+              <Image
+                src="/assets/2.png"
+                alt="Logo"
+                width={2560}
+                height={700}
+                className="h-16 w-auto"
+              />
             </div>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 bg-[#1C2B33] rounded-full p-2 dark:bg-[#8B8D98] dark:text-white hover:text-gray-500 dark:hover:text-gray-300">

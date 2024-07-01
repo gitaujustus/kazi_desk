@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { FaMoon } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ThemeToggle } from './theme-toggle';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,18 +19,18 @@ const Navbar = () => {
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Features</a>
-                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
-                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
+                <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Features</Link>
+                <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pricing</Link>
+                <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</Link>
               </div>
             </div>
           </div>
           <div className="hidden md:block">
             <div className="ml-4 flex items-center md:ml-6">
               <ThemeToggle />
-              <a href="#" className="ml-3 text-gray-600 bg-white  px-6 py-2 rounded-2xl border border-gray-900 text-sm font-medium">Log in</a>
-              <a href="#" className="ml-3 bg-[#172448] hover:bg-[#213468] text-white px-4 py-2 rounded-2xl text-sm font-medium">Get&nbsp;started</a>
+              <a href="/login" className="ml-3 text-gray-600 bg-white  px-6 py-2 rounded-2xl border border-gray-900 text-sm font-medium">Log&nbsp;in</a>
+              <a href="/signup" className="ml-3 bg-[#172448] hover:bg-[#213468] text-white px-4 py-2 rounded-2xl text-sm font-medium">Get&nbsp;started</a>
             </div>
           </div>
           <div className="md:hidden flex items-center">

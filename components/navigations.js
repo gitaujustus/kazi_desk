@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { FaMoon } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ThemeToggle } from './theme-toggle';
@@ -14,15 +15,22 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <span className="text-red-600 dark:text-red-400 font-bold text-2xl">KD</span>
-              <span className="text-gray-800 dark:text-gray-200 font-semibold text-xl">KAZIDESK</span>
+              {/* <span className="text-red-600 dark:text-red-400 font-bold text-2xl">KD</span>
+              <span className="text-gray-800 dark:text-gray-200 font-semibold text-xl">KAZIDESK</span> */}
+              <Image
+                src="/assets/2.png"
+                alt="Logo"
+                width={2560}
+                height={700}
+                className="h-16 w-auto"
+               />
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
-                <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Features</Link>
-                <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pricing</Link>
-                <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</Link>
+                <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium">Home</Link>
+                <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium">Features</Link>
+                <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium">Pricing</Link>
+                <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium">Contact</Link>
               </div>
             </div>
           </div>

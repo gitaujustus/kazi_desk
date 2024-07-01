@@ -11,24 +11,24 @@ function Signup() {
                 <h1 className='text-center text-xl md:text-3xl font-semibold py-3'>Sign Up</h1>
                 <div className='my-4'>
                     <label htmlFor="companyName">Company Name</label>
-                    <input type="text" name="companyName" className='p-2 rounded-md w-full dark:bg-gray-100' placeholder='Company Name' id="companyName" />
+                    <input type="text" name="companyName" className='p-2 rounded-md w-full dark:bg-gray-100 dark:text-gray-800' placeholder='Company Name' id="companyName" />
                 </div>
                 <div className='my-4'>
                     <label htmlFor="name">Name</label>
-                    <input type="text" name="name" className='p-2 rounded-md w-full dark:bg-gray-100' placeholder='Name' id="name" />
+                    <input type="text" name="name" className='p-2 rounded-md w-full dark:bg-gray-100 dark:text-gray-800' placeholder='Name' id="name" />
                 </div>
                 <div className='my-4'>
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" className='p-2 rounded-md w-full dark:bg-gray-100' placeholder='Email' id="email" />
+                    <input type="email" name="email" className='p-2 rounded-md w-full dark:bg-gray-100 dark:text-gray-800 ' placeholder='Email' id="email" />
                 </div>
                 <div className='flex gap-2 my-4'>
                     <div>
                         <label htmlFor="password">Password</label>
-                        <input type="password" name="password" className='p-2 rounded-md w-full dark:bg-gray-100' placeholder='Password' id="password" />
+                        <input type="password" name="password" className='p-2 rounded-md w-full dark:bg-gray-100 dark:text-gray-800' placeholder='Password' id="password" />
                     </div>
                     <div>
                         <label htmlFor="confirmPassword">Confirm&nbsp;Password</label>
-                        <input type="password" name="confirmPassword" className='p-2 rounded-md w-full dark:bg-gray-100' placeholder='Confirm Password' id="confirmPassword" />
+                        <input type="password" name="confirmPassword" className='p-2 rounded-md w-full dark:bg-gray-100 dark:text-gray-800' placeholder='Confirm Password' id="confirmPassword" />
                     </div>
                 </div>
                 <Button title="Sign Up" loading={false}/>

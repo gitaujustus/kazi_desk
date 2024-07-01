@@ -72,19 +72,19 @@ function Login() {
   return (
     <main className='flex justify-center items-center min-h-screen dark:bg-[#112C6F]'>
         <section className='bg-slate-300 mx-2  lg:w-3/4 md:w-[90vw] sm:w-[95vw] w-full flex md:mx-auto min-h-[70vh] rounded-md'>
-            <form className='w-full sm:w-1/2 p-3 dark:bg-radial-gradient-to-r from-[#080D27] to-[#141E5B]'>
+            <form className='w-full sm:w-1/2 p-3 dark:bg-gradient-to-r from-[#080D27] to-[#141E5B]'>
                 <h1 className='text-center text-xl md:text-3xl font-semibold py-3'>Log In</h1>
                 <div className='my-4'>
                     <input type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                     name="email" className='p-2 rounded-md w-full' placeholder='Email' id="email" />
+                     name="email" className='p-2 rounded-md w-full dark:bg-gray-100 dark:text-gray-800' placeholder='Email' id="email" />
                 </div>
                 <div className='my-4'>
                     <input type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                     name="password" className='p-2 rounded-md w-full' placeholder='Password' id="password" />
+                     name="password" className='p-2 rounded-md w-full dark:bg-gray-100 dark:text-gray-800' placeholder='Password' id="password" />
                 </div>
 
                 <div className='flex justify-between my-4 text-sm'>

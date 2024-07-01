@@ -2,6 +2,7 @@ import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
+import { IoLocationSharp } from "react-icons/io5";
 
 const Footer = () => {
   return (
@@ -56,9 +57,9 @@ const Footer = () => {
           {/* Contact info */}
           <div className="w-full md:w-1/4">
             <h3 className="font-semibold mb-2 text-gray-900 dark:text-white">Contact</h3>
-            <p>info@kazidesk.com</p>
-            <p>+254115549916</p>
-            <p>7th Office Plaza Westlands Nairobi</p>
+            <p className='flex gap-2 items-center '><IoMail/> info@kazidesk.com</p>
+            <p className='flex gap-2 items-center '><FaPhoneAlt/> +254115549916</p>
+            <p className='flex gap-2 items-center'><IoLocationSharp/>TRV office Plaza Westlands Nairobi</p>
           </div>
         </div>
       </div>

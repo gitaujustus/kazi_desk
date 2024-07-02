@@ -69,15 +69,15 @@ const AdminNavbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="mt-4 md:hidden">
-            <button className="block w-full text-left py-2 px-4 hover:bg-gray-700 rounded">
+          <div className="mt-4 md:hidden border-b">
+            <button className="block w-full text-left py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
               <LuMessagesSquare size={20} className="inline mr-2" /> Messages
             </button>
-            <button className="block w-full text-left py-2 px-4 hover:bg-gray-700 rounded">
+            <button className="block w-full text-left py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
               <FaBell size={20} className="inline mr-2" /> Notifications
             </button>
-            <button className="bg-white text-black border border-black p-1 rounded-full">
-              <IoLogOut size={20} />
+            <button className="block w-full text-left py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
+              <IoLogOut size={20} className="inline mr-2" /> Logout
             </button>
           </div>
         )}

@@ -32,15 +32,19 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
+        //global custom colors
+        'blue-theme': '#172448',
+
         // Custom colors for light mode
         light: {
-          background: '#ffffff',
+          background: '#c7c7c7',
           text: '#333333',
           primary: '#3b82f6',
+
         },
         // Custom colors for dark mode
         dark: {
-          background: '#1f2937',
+          background: '#0f0f0f',
           text: '#f3f4f6',
           primary: '#60a5fa',
         },

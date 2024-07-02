@@ -12,13 +12,13 @@ const Footer = () => {
         <div className="flex flex-wrap justify-between">
           {/* Logo and social icons */}
           <div className="flex flex-col items-start justify-center w-full md:w-1/4 mb-6 md:mb-0">
-            <div className="flex items-center mb-4">
+            <div className="flex items-center mb-4 dark:bg-white py-1 px-3 rounded-2xl">
               <Image
                 src="/assets/2.png"
                 alt="Logo"
                 width={2560}
                 height={700}
-                className="h-16 w-auto"
+                className="h-10 w-auto"
               />
             </div>
             <div className="flex space-x-4">

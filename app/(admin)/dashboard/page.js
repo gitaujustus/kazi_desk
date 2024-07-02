@@ -1,4 +1,5 @@
 import AdminBar from '@/components/adminBar'
+import MyCalendar from '@/components/mycalender';
 import Image from 'next/image'
 import React from 'react'
 import { CiSettings } from "react-icons/ci";
@@ -6,6 +7,23 @@ import { CiSettings } from "react-icons/ci";
 function Dashbaord() {
   const days = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
   const today = new Date().getDay();
+  const projects=0
+  const OpenTasks=0
+  const pendingTaks=0
+  const OverdueTasks=0
+  const inprogressProjects=0
+  const overdueProjects=0
+
+  const shiftData = [
+    { date: '27-05-2024', day: 'Monday', shift: 'Default shift' },
+    { date: '28-05-2024', day: 'Tuesday', shift: 'Default shift' },
+    { date: '29-05-2024', day: 'Wednesday', shift: 'Default shift' },
+    { date: '30-05-2024', day: 'Thursday', shift: 'Default shift' },
+    { date: '31-05-2024', day: 'Friday', shift: 'Default shift' },
+    { date: '01-05-2024', day: 'Saturday', shift: 'Default shift' },
+    { date: '02-05-2024', day: 'Sunday', shift: 'Default shift' },
+  ];
+
 
   return (
     <main className='min-h-screen dark:bg-[#3B3B3B] pt-5'>
@@ -33,11 +51,11 @@ function Dashbaord() {
       <section className='h-44 bg-white flex justify-between m-4 rounded-md text-black border border-[#076B6D] px-3 mx-2 md:mx-10'>
           <div className='my-auto'>
             <h1 className='text-2xl font-semibold'>Open Tasks</h1>
-            <p className='pt-10 text-center text-xl'>0</p>
+            <p className='pt-10 text-center text-xl'>{OpenTasks}</p>
           </div>
           <div className='my-auto '>
             <h1 className='text-2xl font-semibold'>Projects</h1>
-            <p className='pt-10 text-center text-xl'>0</p>
+            <p className='pt-10 text-center text-xl'>{projects}</p>
           </div>
       </section>
 
@@ -47,30 +65,39 @@ function Dashbaord() {
             <h2 className='text-center text-2xl font-semibold py-2 '>Tasks</h2>
             <div className='h-32 flex justify-between  px-4'>
               <div className='my-auto'>
-                <h1 className='text-2xl text-center font-semibold'>0</h1>
+                <h1 className='text-2xl text-center font-semibold'>
+                  {pendingTaks}
+                </h1>
                 <p className='pt-2 text-xl'>pending</p>
               </div>
               <div className='my-auto'>
-                <h1 className='text-2xl text-center font-semibold'>0</h1>
+                <h1 className='text-2xl text-center font-semibold'>
+                  {OverdueTasks}
+                </h1>
                 <p className='pt-2 text-xl'>Overdue</p>
               </div>
             </div>
           </div>
 
           <div className='w-full sm:w-1/2 rounded-md bg-[#1D1D1D] dark:bg-[#1D1D1D] text-white'>
-            <h2 className='text-center text-2xl font-semibold py-2 '>Tasks</h2>
+            <h2 className='text-center text-2xl font-semibold py-2 '>Projects</h2>
             <div className='h-32 flex justify-between  px-4'>
               <div className='my-auto'>
-                <h1 className='text-2xl text-center font-semibold'>0</h1>
+                <h1 className='text-2xl text-center font-semibold'>
+                  {inprogressProjects}
+                </h1>
                 <p className='pt-2 text-xl'>In Progress</p>
               </div>
               <div className='my-auto'>
-                <h1 className='text-2xl text-center font-semibold'>0</h1>
+                <h1 className='text-2xl text-center font-semibold'>
+                  {overdueProjects}
+                </h1>
                 <p className='pt-2 text-xl'>Overdue</p>
               </div>
             </div>
           </div>
         </section>
+
 
         <section className="rounded-lg shadow-md bg-[#FFFFFF] mx-2 md:mx-10 ">
             <div className='bg-[#076B6D] rounded-t-lg px-2 py-2'>
@@ -93,6 +120,91 @@ function Dashbaord() {
               <span>Break: 0s</span>
           </div>
         </section>
+
+
+        {/* shift schedule */}
+         <section className="bg-[#FAFAFA] dark:bg-[#1D1D1D] dark:text-white rounded-lg shadow-md p-6 max-w-lg md:max-w-2xl my-4 mx-2 sm:mx-auto">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-xl font-semibold">Shift Schedule</h2>
+              <span className="bg-[#076B6D] text-white px-3 py-1 rounded-lg text-sm">Employee Shift</span>
+            </div>
+            <table className="w-full">
+              <tbody>
+                {shiftData.map((shift, index) => (
+                  <tr key={index}>
+                    <td className="py-2 ">{shift.date}</td>
+                    <td className="py-2">{shift.day}</td>
+                    <td className="py-2 text-right ">{shift.shift}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+        </section>
+
+      {/* tasks and tickets */}
+        <section className='mx-2 overflow-x-auto lg:mx-10 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  justify-between gap-4'>
+          <div className='bg-[#1D1D1D] w-auto  rounded-lg min-h-44 text-white'>
+            <p className='w-full text-center bg-[#076B6D] rounded-t-md py-2'>My Tasks</p>
+            <div className='flex justify-between px-2'>
+              <p>Task ID</p>
+              <p>Task</p>
+              <p>Status</p>
+              <p>Due Date</p>
+            </div>
+            <div className='flex flex-col items-center justify-center py-5 text-gray-400'>
+                <svg width="85" height="108" viewBox="0 0 115 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 40C0 17.9086 17.9086 0 40 0H75C97.0914 0 115 17.9086 115 40V128H60C26.8629 128 0 101.137 0 68V40Z" fill="#111725"/>
+                <g clip-path="url(#clip0_0_1)">
+                <path d="M34.75 55.125H50.5V63.375H34.75V55.125Z" fill="white"/>
+                <path d="M82 26.25H78.0625V18H38.6875V26.25H30.8125V31.4062L28.45 34.5H22.9375V41.7188L19 46.875V84H66.25L82 63.375V26.25ZM26.875 38.625H58.375V46.875H26.875V38.625ZM62.3125 79.875H22.9375V51H62.3125V79.875ZM66.25 46.875H62.3125V34.5H34.75V30.375H66.25V46.875ZM74.125 36.5625L70.1875 41.7188V26.25H42.625V22.125H74.125V36.5625Z" fill="white"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_0_1">
+                <rect width="63" height="66" fill="white" transform="translate(19 18)"/>
+                </clipPath>
+                </defs>
+                </svg>
+                No record Found
+            </div>
+          </div>
+
+          <div className='bg-[#1D1D1D]  w-auto  rounded-lg min-h-44 text-white'>
+            <p className='w-full text-center bg-[#076B6D] rounded-t-md py-2'>Tickets</p>
+            <div className='flex justify-between px-2'>
+              <p>Task ID</p>
+              <p>Task</p>
+              <p>Status</p>
+              <p>Due Date</p>
+            </div>
+            <div className='flex flex-col items-center justify-center py-5 text-gray-400'>
+                <svg width="85" height="108" viewBox="0 0 115 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 40C0 17.9086 17.9086 0 40 0H75C97.0914 0 115 17.9086 115 40V128H60C26.8629 128 0 101.137 0 68V40Z" fill="#111725"/>
+                <g clip-path="url(#clip0_0_1)">
+                <path d="M34.75 55.125H50.5V63.375H34.75V55.125Z" fill="white"/>
+                <path d="M82 26.25H78.0625V18H38.6875V26.25H30.8125V31.4062L28.45 34.5H22.9375V41.7188L19 46.875V84H66.25L82 63.375V26.25ZM26.875 38.625H58.375V46.875H26.875V38.625ZM62.3125 79.875H22.9375V51H62.3125V79.875ZM66.25 46.875H62.3125V34.5H34.75V30.375H66.25V46.875ZM74.125 36.5625L70.1875 41.7188V26.25H42.625V22.125H74.125V36.5625Z" fill="white"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_0_1">
+                <rect width="63" height="66" fill="white" transform="translate(19 18)"/>
+                </clipPath>
+                </defs>
+                </svg>
+                No record Found
+            </div>
+          </div>
+
+          <MyCalendar/>
+
+        </section>
+
+        <section className='mx-2 md:mx-10 my-4'>
+        <div className='bg-[#FAFAFA] dark:bg-[#1D1D1D] w-auto  rounded-lg min-h-44 text-white'>
+            <p className='w-full text-center bg-[#076B6D] rounded-t-md py-2 font-semibold'>Notices</p>
+           
+          </div>
+        </section>
+        
+
       </section>
     </main>
   )

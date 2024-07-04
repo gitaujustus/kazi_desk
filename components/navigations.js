@@ -14,15 +14,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
-              {/* <span className="text-red-600 dark:text-red-400 font-bold text-2xl">KD</span>
-              <span className="text-gray-800 dark:text-gray-200 font-semibold text-xl">KAZIDESK</span> */}
+            <div className="flex-shrink-0 dark:bg-white py-1 px-3 rounded-2xl">
               <Image
                 src="/assets/2.png"
                 alt="Logo"
                 width={2560}
                 height={700}
-                className="h-16 w-auto"
+                className="h-10 w-auto"
                />
             </div>
             <div className="hidden md:block">

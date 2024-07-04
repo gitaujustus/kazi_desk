@@ -11,37 +11,39 @@ import { IoLogOut } from "react-icons/io5";
 const AdminNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const EmployeeID="EMP1"
   return (
     <nav className="py-2 px-6 bg-white dark:bg-[#3B3B3B]">
       <div className="container mx-auto">
         <div className="flex items-center justify-between ">
           {/* Admin Profile and Search */}
-          <div className="flex items-center sm:gap-40 md:gap-52 lg:gap-64 space-x-4 flex-grow w-2/3 ">
+          <div className="flex items-center  md:gap-32 lg:gap-44 space-x-4 flex-grow w-2/3 ">
            <div className='flex items-center gap-2'>
             <img
-                src="/api/placeholder/32/32"
-                // alt="Admin"
+                src="https://avatars.githubusercontent.com/u/113968776?v=4"
+                alt="Admin"
                 className="w-16 h-16  rounded-full border-2 border-[#076B6D]"
               />
               <p className='hidden sm:flex flex-col'>
                 <span className="font-semibold text-3xl">Admin</span>
-                <span className="text-xs">Employee Id: EMP1</span>
+                <span className="text-xs">Employee Id: {EmployeeID}</span>
               </p>
            </div>
 
-            <div className="relative flex-grow max-w-md ml-10">
+            <div className="relative flex gap-6 flex-grow max-w-md ">
               <input
                 type="text"
                 placeholder="Search"
                 className="w-full bg-[#343434] dark:bg-[#202020] text-white rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-300"
               />
               <FaSearch className="absolute left-3 top-2.5 text-gray-400" size={18} />
+              <ThemeToggle/>
             </div>
+
           </div>
 
           {/* Action Icons */}
           <div className="hidden md:flex items-center space-x-4 md:ml-2">
-          <ThemeToggle/>
             <button className="bg-white text-black border border-black p-1 rounded-full">
               <LuMessagesSquare size={20} />
             </button>

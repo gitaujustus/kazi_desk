@@ -1,8 +1,14 @@
-import React from 'react'
+'use client'
+import React, { useState, useRef, useEffect } from 'react'
 import { FaSearch } from 'react-icons/fa';
 import { IoMdSettings } from "react-icons/io";
 import ContactsTable from '@/components/contactsTable';
 import LeadsNav from '@/components/leads/leadsMenuBar';
+import { MdOutlineCloudUpload } from "react-icons/md";
+import StyledCheckBox from '@/components/ui/checkboxStyle';
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
 
 
 function leadcontact() {
@@ -18,10 +24,28 @@ function leadcontact() {
     { id: 9, name: 'Abraham Ryle', company: 'Company X', email: 'example@example.com', addedBy: 'Amon Were', created: '20-05-2024', status: 'inactive' },
   ]);
 
+  const [showImport, setShowImport] = useState(false);
+  const importRef = useRef(null);
+
+  const pathname = usePathname()
+
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (importRef.current && !importRef.current.contains(event.target)) {
+        setShowImport(false);
+      }
+    }
+  
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
  
 
   return (
-    <main className='bg-[#C7C7C7] rounded-lg mx-5 px-3 py-3'>
+    <main className='bg-[#C7C7C7] rounded-lg mx-5 px-3 py-3 relative'>
         <p className='font-bold text-2xl text-left py-5'>Lead Contact</p>
         {/* search and filters */}
         <section className='flex flex-wrap bg-white gap-3 w-full p-4 rounded-lg justify-between'>
@@ -60,7 +84,53 @@ function leadcontact() {
             </button>
         </section>
 
-        <LeadsNav/>
+
+
+        {/* nav */}
+        <section className=' flex items-center justify-between'>
+         <header className='flex flex-wrap gap-3 py-5'>
+         <Link href={'/admin/leads'} className={`${pathname === '/admin/leads'? 'bg-[#3D50FC] text-white':'bg-white'} flex gap-2   items-center rounded-lg p-2`}>
+            <span>
+                <svg width="24"  height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 12.998H13V18.998H11V12.998H5V10.998H11V4.99805H13V10.998H19V12.998Z" fill="black"/>
+                </svg>
+            </span>
+            AddLeadContact
+        </Link>
+
+            <Link href={'/admin/leads/leadform'} className={`${pathname === '/admin/leads/leadform'? 'bg-[#3D50FC] text-white':'bg-white'} flex gap-2 items-center rounded-lg p-2`}>
+                <span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.71 7.04055C21.1 6.65055 21.1 6.00055 20.71 5.63055L18.37 3.29055C18 2.90055 17.35 2.90055 16.96 3.29055L15.12 5.12055L18.87 8.87055M3 17.2505V21.0005H6.75L17.81 9.93055L14.06 6.18055L3 17.2505Z" fill="#172448"/>
+                    </svg>
+                </span>
+                LeadForm
+            </Link>
+            <button onClick={()=> setShowImport(true)} className={`text-black bg-white flex gap-2 items-center rounded-lg p-2`}>
+                <span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.293 9.707L11.293 14.707L12 15.414L12.707 14.707L17.707 9.707L16.293 8.293L13 11.586V4H18C18.5304 4 19.0391 4.21071 19.4142 4.58579C19.7893 4.96086 20 5.46957 20 6V18C20 18.5304 19.7893 19.0391 19.4142 19.4142C19.0391 19.7893 18.5304 20 18 20H6C5.46957 20 4.96086 19.7893 4.58579 19.4142C4.21071 19.0391 4 18.5304 4 18V6C4 5.46957 4.21071 4.96086 4.58579 4.58579C4.96086 4.21071 5.46957 4 6 4H11V11.586L7.707 8.293L6.293 9.707Z" fill="#172448"/>
+                    </svg>
+                </span>
+                Import
+            </button>
+            <button className={`text-black bg-white flex gap-2 items-center rounded-lg p-2`}>
+                <span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 2C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2M13 3.5L18.5 9H13M8.93 12.22H16V19.29L13.88 17.17L11.05 20L8.22 17.17L11.05 14.35" fill="black"/>
+                    </svg>
+                </span>
+                Export
+            </button>
+        </header>
+        <button className='border border-black p-1 rounded-full bg-white'>
+            <IoMdSettings size={26}/>
+        </button>
+    </section>
+
+        {/* <LeadsNav/> */}
+
+
 
       <ContactsTable contacts={contacts}/>
         {/* footers */}
@@ -80,6 +150,73 @@ function leadcontact() {
             <button className="px-3 py-1 border rounded text-gray-600">Next</button>
           </div>
           </div>
+        </section>
+
+
+        {/* Import */} 
+        <section 
+        ref={importRef}
+        className={`flex-1 fixed top-0 right-0 h-full w-[90vw] bg-[#172448] p-10 transition-transform duration-300 ease-in-out transform ${
+          showImport ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+          <div className='bg-white w-full mx-4 min-h-[70vh] rounded-lg px-10 py-5'>
+            <h1 className='text-center text-2xl font-semibold py-2'>Import Leads</h1>
+            <p className='py-2 font-semibold text-xl'>Import Lead</p>
+
+            <p className='p-2  bg-[#FEF2CC] rounded-md flex items-center gap-2'>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_194_1584)">
+                <path d="M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM12 9C12.2652 9 12.5196 8.89464 12.7071 8.70711C12.8946 8.51957 13 8.26522 13 8C13 7.73478 12.8946 7.48043 12.7071 7.29289C12.5196 7.10536 12.2652 7 12 7C11.7348 7 11.4804 7.10536 11.2929 7.29289C11.1054 7.48043 11 7.73478 11 8C11 8.26522 11.1054 8.51957 11.2929 8.70711C11.4804 8.89464 11.7348 9 12 9ZM12 18C12.2449 18 12.4813 17.91 12.6644 17.7473C12.8474 17.5845 12.9643 17.3603 12.993 17.117L13 17V11C12.9997 10.7451 12.9021 10.5 12.7272 10.3146C12.5522 10.1293 12.313 10.0178 12.0586 10.0028C11.8042 9.98789 11.5536 10.0707 11.3582 10.2343C11.1627 10.3979 11.0371 10.6299 11.007 10.883L11 11V17C11 17.2652 11.1054 17.5196 11.2929 17.7071C11.4804 17.8946 11.7348 18 12 18Z" fill="#172448"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_194_1584">
+                <rect width="24" height="24" fill="white" transform="matrix(-1 0 0 -1 24 24)"/>
+                </clipPath>
+                </defs>
+                </svg>
+                Date format should be in Y-m-d (e.g. 2022-04-21) format. Make sure the date format is correct in the excel file.
+            </p>
+
+            <div className="border-2 border-gray-300 my-5 rounded-lg p-6  h-[50vh]">
+              <div className="text-center flex flex-col items-center justify-center  h-full">
+                <label htmlFor="file-upload" className="cursor-pointer">
+                  <div className="mb-4">
+                    <MdOutlineCloudUpload className="mx-auto min-h-20 w-20 text-gray-400" />
+                  </div>
+                  <span className="mt-2 block text-sm font-medium text-gray-600">
+                    Choose a file
+                  </span>
+                  <input id="file-upload" name="file-upload" type="file" className="sr-only" 
+                        accept=".xls,.xlsx,.csv" />
+                </label>
+                <p className="text-xs text-gray-500 mt-2">
+                  File must be a file of type: xls, xlsx, csv
+                </p>
+              </div>
+            </div>
+
+            <div>
+            <p>Files Contains Headings Row</p>
+              <label className="inline-flex items-center mb-5 cursor-pointer">
+                  <input
+                          type="checkbox"
+                          className="sr-only peer"
+                      />
+                  <StyledCheckBox />
+              </label>
+            </div>
+
+        <div className='flex gap-4'>
+          <button className='px-4 py-2 bg-[#3D50FC] rounded-md text-white'>
+                &gt; Upload and Move To Next Step
+          </button>
+          <button className='rounded-md px-3 py-2 bg-[#D8DCFE] text-black font-semibold'>
+            Back
+          </button>
+        </div>
+
+      </div>
         </section>
     </main>
   )

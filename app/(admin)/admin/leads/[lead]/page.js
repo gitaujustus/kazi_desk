@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import MenuBar from '@/components/leads/menubar'
+import MenuBar from '@/components/leads/leadsViewNav';
 import { SlOptions } from "react-icons/sl";
 import ActionButtonForProfile from '@/components/ui/ActionButtonForProfile';
 

@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
-import MenuBar from '@/components/leads/menubar'
+import MenuBar from '@/components/leads/leadsViewNav';
 import { FaSearch } from 'react-icons/fa';
 
-function Deals({params}) {
+function Notes({params}) {
 
     const Name="Mr Abraham Ruto"
 
@@ -20,7 +20,7 @@ function Deals({params}) {
                     <path d="M19 12.998H13V18.998H11V12.998H5V10.998H11V4.99805H13V10.998H19V12.998Z" fill="white"/>
                     </svg>
                     </span>
-                    Add Deal
+                    Add Notes
                 </button>
                 <button className='flex gap-2 items-center bg-white rounded-lg p-2 px-7'>
                     <span>
@@ -31,57 +31,30 @@ function Deals({params}) {
                     Export
                 </button>
             </div>
-
-          <div className='flex gap-2'>
-            <div className='flex gap-3 items-center'>
-                <select className='border border-gray-300 rounded-lg p-2 px-10'>
-                    <option value="Sales Pipeline" className='p-1' >Sales Pipeline</option>
-                </select>
-            </div>
-           <div className="relative flex gap-6 overflow-hidden flex-grow max-w-md ">
-           <input 
-              type="text"
-              placeholder='Start Typing To Search'
-              className="w-full bg-[#393A40] dark:bg-[#202020] text-white rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-300"
-              />
-              <FaSearch className="absolute left-3 top-2.5 text-gray-400" size={18} />
-            </div>
-            
-          </div>
        </section>
 
-     
 
 
-
-       <section className='rounded-lg my-4 min-h-[90vh]'>
-            <div className=' overflow-x-auto'>
-            <table className='w-full min-h-[50vh] bg-[#172448]'>
-                <thead className='bg-white p-4'>
-                <tr>
-                    <th className='text-left px-4 py-2'><input type='checkbox'/></th>
-                    <th className='text-left px-4 py-2'>Deal&nbsp;Name</th>
-                    <th className='text-left px-4 py-2'>Lead&nbsp;Name</th>
-                    <th className='text-left px-4 py-2'>Email</th>
-                    <th className='text-left px-4 py-2'>Mobile</th>
-                    <th className='text-left px-4 py-2'>Value</th>
-                    <th className='text-left px-4 py-2'>Close&nbsp;Date</th>
-                    <th className='text-left px-4 py-2'>Next&nbsp;Follow&nbsp;Up</th>
-                    <th className='text-left px-4 py-2'>Deal&nbsp;Agent</th>
-                    <th className='text-left px-4 py-2'>Deals&nbsp;Added&nbsp;By</th>
-                    <th className='text-left px-4 py-2'>Stage</th>
-                    <th className='text-left px-4 py-2'>Action</th>
-                </tr>
-                </thead>
-                <tbody className=' text-white '>
+       <section className='rounded-lg  my-4 min-h-[90vh]'>
+            <div className='overflow-x-auto'>
+                <table className='w-full min-h-[50vh] bg-[#172448]'>
+                    <thead className='bg-white p-4'>
                     <tr>
-                        <td colSpan={12} className='text-center py-10 '>No data available in table</td>
+                        <th className='text-left px-4 py-2'><input type='checkbox'/></th>
+                        <th className='text-left px-4 py-2'>Note Title</th>
+                        <th className='text-left px-4 py-2'>Note Type</th>
+                        <th className='text-left px-4 py-2'>Created</th>
+                        <th className='text-left px-4 py-2'>Action</th>
                     </tr>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody className=' text-white '>
+                        <tr>
+                            <td colSpan={5} className='text-center py-10 '>No data available in table</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-
-            <div className='bg-[#172448] w-full py-4 rounded-b-xl flex flex-wrap justify-between px-6'>
+            <div className='bg-[#172448] py-4 rounded-b-xl flex justify-between px-6 flex-wrap'>
                 <div className='flex gap-3 items-center text-white'>
                         <label htmlFor="entries">Show</label>
                         <select className='border border-gray-300 rounded-lg p-2 text-black '>
@@ -106,4 +79,4 @@ function Deals({params}) {
   )
 }
 
-export default Deals
+export default Notes

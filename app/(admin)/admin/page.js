@@ -28,7 +28,7 @@ function Dashbaord() {
 
   return (
     <main className='min-h-screen dark:bg-[#3B3B3B] pt-5'>
-      <section className=' md:mx-6 rounded-md bg-light-background dark:bg-dark-background pb-4 px-2'>
+      <section className=' md:mx-6 rounded-md bg-light-background dark:bg-dark-background pb-4 '>
         <div className='flex bg-[#076B6D] items-center justify-between rounded-t-lg h-64 '>
           <div className='p-4 w-1/2 text-white'>
             <h1 className='text-3xl  font-semibold'>Welcome back Admin</h1>
@@ -39,6 +39,9 @@ function Dashbaord() {
           </div>
         </div>
          {/* clock in */}
+      
+      <section className='px-2'>
+
       <div className='flex justify-end items-center gap-2 py-4  md:mx-10'>
         <button className='bg-[#1D1D1D] dark:bg-[#172448] rounded-md px-5 py-2 text-white flex gap-2 items-center'>
         <svg width="20" height="20" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -209,6 +212,7 @@ function Dashbaord() {
           <ConditionalNavigation/>
         </section>
         
+        </section>
       </section>
     </main>
   )

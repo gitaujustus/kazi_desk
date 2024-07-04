@@ -1,6 +1,5 @@
 "use client"
 import { useState } from "react";
-import OverviewLowerPills from "./overviewLowerNav";
 import ClientLowerPills from "./clientLowerNav";
 const ClientTabs = () => {
 
@@ -14,7 +13,7 @@ const ClientTabs = () => {
             activeItem={activeItem} 
             onItemClick={setActiveItem} 
         />
-        <div className="p-4 flex justify-center items-center h-64 bg-gray-100 rounded-lg">
+        {/* <div className="p-4 flex justify-center items-center h-64 bg-gray-100 rounded-lg">
             <div className="text-center">
                 <div className="bg-gray-300 rounded-full p-4 inline-block mb-2">
                     <svg className="w-8 h-8 text-gray-600" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -23,7 +22,7 @@ const ClientTabs = () => {
                 </div>
                 <p className="text-gray-600 font-medium">Not Enough Data</p>
             </div>
-        </div>
+        </div> */}
     </div>
     );
 }

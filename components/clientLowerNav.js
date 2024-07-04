@@ -1,8 +1,15 @@
 "use client"
 import React, { useState } from 'react';
+import LatestClients from './leads/latestClients';
+import ClientWiseEarnings from './clientWiseEarning';
+import ClientWiseTimelogs from './clientWiseTimelogs';
+import DealCount from './dealCount';
+import LeadsCount from './leadsCount';
+import RecentLogin from './recentLogin';
+// import NotEnoughData from './notEnoughData';
 
 const ClientLowerPills = () => {
-    const [activePill, setActivePill] = useState('Client Wise Earnings');
+    const [activePill, setActivePill] = useState('ClientWiseEarnings');
 
     const pillItems = [
         { id: 'ClientWiseEarnings', label: "Client Wise Earnings" },
@@ -57,12 +64,12 @@ const ClientLowerPills = () => {
 };
 
 // Placeholder components for each content type
-const ClientWiseEarningContent = () => <div>Client Wise Earning Content</div>;
-const ClientWiseTimelogsContent = () => <div>Client Wise Timelogs Content</div>;
-const DealCountByStagesAndPipelineContent = () => <div>Deal Count By Stages And Pipeline Content</div>;
-const LeadsCountBySourceContent = () => <div>Leads Count By Source Content</div>;
-const LatestClientsContent = () => <div>Latest Clients Content</div>;
-const RecentLoginActivitiesContent = () => <div>Recent Login Activities Content</div>;
+const ClientWiseEarningContent = () => <div><ClientWiseEarnings /></div>;
+const ClientWiseTimelogsContent = () => <div><ClientWiseTimelogs /></div>;
+const DealCountByStagesAndPipelineContent = () => <div><DealCount /> </div>;
+const LeadsCountBySourceContent = () => <div><LeadsCount /></div>;
+const LatestClientsContent = () => <div><LatestClients /></div>;
+const RecentLoginActivitiesContent = () => <div><RecentLogin /></div>;
 const NotEnoughData = () => (
     <div className="text-center py-8">
         <div className="bg-gray-200 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">

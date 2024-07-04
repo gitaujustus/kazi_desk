@@ -1,19 +1,19 @@
 "use client"
 import { useState } from "react";
-import OverviewLowerPills from "./overviewLowerNav";
-const OverviewTabs = () => {
+import ClientLowerPills from "./clientLowerNav";
+const ClientTabs = () => {
 
-    const [activeItem, setActiveItem] = useState('Income');
-    const navItems = ['Income', 'Timesheet', 'Pending Leaves', 'Open Tickets', 'Pending Tasks', 'Pending FollowUp'];
+    const [activeItem, setActiveItem] = useState('Client Wise Earnings');
+    const navItems = ['Client Wise Earnings', 'Client Wise Timelogs', 'Deal Count By Stages And Pipeline', 'Leads Count By Source', 'Latest Clients', 'Recent Login Activities'];
 
     return (  
         <div className="bg-white rounded-lg shadow-lg mb-8">
-        <OverviewLowerPills 
+        <ClientLowerPills 
             items={navItems} 
             activeItem={activeItem} 
             onItemClick={setActiveItem} 
         />
-        <div className="p-4 flex justify-center items-center h-64 bg-gray-100 rounded-lg">
+        {/* <div className="p-4 flex justify-center items-center h-64 bg-gray-100 rounded-lg">
             <div className="text-center">
                 <div className="bg-gray-300 rounded-full p-4 inline-block mb-2">
                     <svg className="w-8 h-8 text-gray-600" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -22,9 +22,9 @@ const OverviewTabs = () => {
                 </div>
                 <p className="text-gray-600 font-medium">Not Enough Data</p>
             </div>
-        </div>
+        </div> */}
     </div>
     );
 }
  
-export default OverviewTabs;
+export default ClientTabs;

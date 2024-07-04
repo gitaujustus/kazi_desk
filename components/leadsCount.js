@@ -1,18 +1,5 @@
-"use client"
-import { useState } from "react";
-import OverviewLowerPills from "./overviewLowerNav";
-const OverviewTabs = () => {
-
-    const [activeItem, setActiveItem] = useState('Income');
-    const navItems = ['Income', 'Timesheet', 'Pending Leaves', 'Open Tickets', 'Pending Tasks', 'Pending FollowUp'];
-
-    return (  
-        <div className="bg-white rounded-lg shadow-lg mb-8">
-        <OverviewLowerPills 
-            items={navItems} 
-            activeItem={activeItem} 
-            onItemClick={setActiveItem} 
-        />
+const LeadsCount = () => {
+    return (
         <div className="p-4 flex justify-center items-center h-64 bg-gray-100 rounded-lg">
             <div className="text-center">
                 <div className="bg-gray-300 rounded-full p-4 inline-block mb-2">
@@ -23,8 +10,7 @@ const OverviewTabs = () => {
                 <p className="text-gray-600 font-medium">Not Enough Data</p>
             </div>
         </div>
-    </div>
-    );
+      );
 }
  
-export default OverviewTabs;
+export default LeadsCount;

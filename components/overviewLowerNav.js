@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 
-const LowerPills = () => {
+const OverviewLowerPills = () => {
     const [activePill, setActivePill] = useState('Income');
 
     const pillItems = [
@@ -74,4 +74,4 @@ const NotEnoughData = () => (
     </div>
 );
 
-export default LowerPills;
+export default OverviewLowerPills;

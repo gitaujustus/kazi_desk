@@ -1,14 +1,15 @@
 "use client"
 import { useState } from "react";
 import OverviewLowerPills from "./overviewLowerNav";
-const OverviewTabs = () => {
+import ClientLowerPills from "./clientLowerNav";
+const ClientTabs = () => {
 
-    const [activeItem, setActiveItem] = useState('Income');
-    const navItems = ['Income', 'Timesheet', 'Pending Leaves', 'Open Tickets', 'Pending Tasks', 'Pending FollowUp'];
+    const [activeItem, setActiveItem] = useState('Client Wise Earnings');
+    const navItems = ['Client Wise Earnings', 'Client Wise Timelogs', 'Deal Count By Stages And Pipeline', 'Leads Count By Source', 'Latest Clients', 'Recent Login Activities'];
 
     return (  
         <div className="bg-white rounded-lg shadow-lg mb-8">
-        <OverviewLowerPills 
+        <ClientLowerPills 
             items={navItems} 
             activeItem={activeItem} 
             onItemClick={setActiveItem} 
@@ -27,4 +28,4 @@ const OverviewTabs = () => {
     );
 }
  
-export default OverviewTabs;
+export default ClientTabs;

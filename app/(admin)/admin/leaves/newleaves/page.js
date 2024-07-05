@@ -17,7 +17,7 @@ const page = () => {
                 <div className='w-full md:w-[30%]' >
                     <label>Leave Type*</label>
                     <div className='flex'>
-                        <select className='border border-gray-400 rounded-lg p-2 w-full'>
+                        <select className='border border-gray-400 rounded-l-lg p-2 w-full'>
                         <option value=" " > </option>
                         </select>
                         <button className='bg-[#172448] text-white rounded-r-lg px-2'>Add</button>
@@ -33,7 +33,7 @@ const page = () => {
             </div>
 
             <p className='pt-4'>Select Duration</p>
-            <div className='flex flex-col md:flex-row gap-12'>
+            <div className='flex flex-col gap-12'>
                 
                 <div>
                     <div>

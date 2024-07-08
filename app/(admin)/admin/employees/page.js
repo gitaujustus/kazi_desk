@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { ExportIcon, ImportIcon } from '@/components/svg/icons';
 import ImportClient from '@/components/clients/importClient';
 import EmployeeTable from '@/components/employee/employeeTable';
+import EmailInvite from '@/components/employee/invite/email';
 
 
 
@@ -66,6 +67,9 @@ function Employees() {
   const [showImport, setShowImport] = useState(false);
   const importRef = useRef(null);
 
+  const [showUnviteEmployeeModel, setShowUnviteEmployeeModel] = useState(false);
+  const InviteEmployeeRef = useRef(null);
+
   const pathname = usePathname()
 
 
@@ -76,6 +80,20 @@ function Employees() {
       }
     }
   
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+//   for showing invite employee modal
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (InviteEmployeeRef.current && !InviteEmployeeRef.current.contains(event.target)) {
+        setShowUnviteEmployeeModel(false);
+      }
+    }
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -140,14 +158,14 @@ function Employees() {
             </span>
             Add Employee
         </Link>
-         <Link href={'/admin/employees'} className={`${pathname === '/admin/employee'? 'bg-[#3D50FC] text-white':'bg-white'} flex gap-2   items-center rounded-lg p-2`}>
+         <button  onClick={() => setShowUnviteEmployeeModel(true)}  className={`${pathname === '/admin/employee'? 'bg-[#3D50FC] text-white':'bg-white'} flex gap-2   items-center rounded-lg p-2`}>
             <span>
                 <svg width="24"  height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19 12.998H13V18.998H11V12.998H5V10.998H11V4.99805H13V10.998H19V12.998Z" fill="black"/>
                 </svg>
             </span>
             Invite Employee
-        </Link>
+        </button>
             <button onClick={()=> setShowImport(true)} className={`text-black bg-white flex gap-2 items-center rounded-lg p-2`}>
                <ImportIcon/>
                 Import
@@ -163,19 +181,26 @@ function Employees() {
 
 
       <EmployeeTable employees={employees}/>
-        {/* footers */}
        
 
+    {/* Add Employee Modal */}
         <section 
         ref={importRef}
         className={`flex-1 fixed top-0 right-0 h-full w-[90vw] bg-[#172448] p-10 transition-transform duration-300 ease-in-out transform ${
           showImport ? 'translate-x-0' : 'translate-x-full'
         }  overflow-y-auto`}
       >
-        {/* <ImportClient/> */}
-        <h1 className='text-white'>Add employee</h1>
+        <h1 className='text-white'>Add employee</h1> {/* Patrick import the Add Employee component here */}
         </section>
 
+    {/* Invite Employee Modal End */}
+    {showUnviteEmployeeModel && (
+        <div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50'>
+          <div ref={InviteEmployeeRef}>
+            <EmailInvite onClose={() => setShowUnviteEmployeeModel(false)} />
+          </div>
+        </div>
+      )}
 
        
     </main>

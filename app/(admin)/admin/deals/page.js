@@ -8,6 +8,8 @@ import { MdOutlineCloudUpload } from "react-icons/md";
 import StyledCheckBox from '@/components/ui/checkboxStyle';
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import AddNewStage from '@/components/leads/addNewStage';
+import ImportDeals from '@/components/deals/importdeals';
 
 
 function Deal() {
@@ -16,7 +18,23 @@ function Deal() {
   const [showImport, setShowImport] = useState(false);
   const importRef = useRef(null);
 
+
   const pathname = usePathname()
+
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (importRef.current && !importRef.current.contains(event.target)) {
+        setShowImport(false);
+      }
+    }
+  
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+ 
 
 
  
@@ -74,7 +92,6 @@ function Deal() {
             </span>
             Add Deals
         </Link>
-
             <button onClick={()=> setShowImport(true)} className={`text-black bg-white flex gap-2 items-center rounded-lg p-2`}>
                 <span>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,13 +110,13 @@ function Deal() {
             </button>
         </header>
        <div className='flex gap-2'>
-       <button className='border border-black p-2 rounded-full bg-[#172448]'>
+       <Link href={'/admin/deals'} className='border border-black p-2 rounded-full bg-[#172448]'>
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 3.75V26.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M23.75 3.75H6.25C4.86929 3.75 3.75 4.86929 3.75 6.25V23.75C3.75 25.1307 4.86929 26.25 6.25 26.25H23.75C25.1307 26.25 26.25 25.1307 26.25 23.75V6.25C26.25 4.86929 25.1307 3.75 23.75 3.75Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M3.75 11.25H26.25M3.75 18.75H26.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-        </button>
+        </Link>
         <Link href={'/admin/deals/kanbanview'} className='border border-black p-2 rounded-full bg-white'>
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_166_2570)">
@@ -162,6 +179,17 @@ function Deal() {
             <button className="px-3 py-1 border rounded text-gray-600">Next</button>
           </div>
           </div>
+        </section>
+
+
+{/* import deals */}
+        <section 
+        ref={importRef}
+        className={`flex-1 fixed top-0 right-0 h-full w-[90vw] bg-[#172448] p-10 transition-transform duration-300 ease-in-out transform ${
+          showImport ? 'translate-x-0' : 'translate-x-full'
+        }  overflow-y-auto`}
+      >
+        <ImportDeals/>
         </section>
 
     </main>

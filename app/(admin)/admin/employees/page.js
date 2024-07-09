@@ -64,7 +64,10 @@ function Employees() {
     { id: 50, name: 'Abraham Ruto', company: 'Company X', email: 'example@example.com', addedBy: 'Amon Were', userRole: 'Employee', status: 'active' },
   ]);
 
+  const [showAddEmployee, setShowAddEmployee] = useState(false);
   const [showImport, setShowImport] = useState(false);
+
+  const addEmployeeRef = useRef(null);
   const importRef = useRef(null);
 
   const [showUnviteEmployeeModel, setShowUnviteEmployeeModel] = useState(false);
@@ -72,6 +75,19 @@ function Employees() {
 
   const pathname = usePathname()
 
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (addEmployeeRef.current && !addEmployeeRef.current.contains(event.target)) {
+        setShowAddEmployee(false);
+      }
+    }
+  
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -150,14 +166,22 @@ function Employees() {
         {/* nav */}
         <section className=' flex items-center justify-between'>
          <header className='flex flex-wrap gap-3 py-5'>
-         <Link href={'/admin/employees'} className={`${pathname === '/admin/employee'? 'bg-[#3D50FC] text-white':'bg-white'} flex gap-2   items-center rounded-lg p-2`}>
+         <button  onClick={()=> setShowAddEmployee(true)}  className={`text-black bg-white flex gap-2 items-center rounded-lg p-2`} >
             <span>
                 <svg width="24"  height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19 12.998H13V18.998H11V12.998H5V10.998H11V4.99805H13V10.998H19V12.998Z" fill="black"/>
                 </svg>
             </span>
             Add Employee
-        </Link>
+        </button>
+         {/* <Link href={'/admin/employees'} className={`${pathname === '/admin/employee'? 'bg-[#3D50FC] text-white':'bg-white'} flex gap-2   items-center rounded-lg p-2`}>
+            <span>
+                <svg width="24"  height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 12.998H13V18.998H11V12.998H5V10.998H11V4.99805H13V10.998H19V12.998Z" fill="black"/>
+                </svg>
+            </span>
+            Add Employee
+        </Link> */}
          <button  onClick={() => setShowUnviteEmployeeModel(true)}  className={`${pathname === '/admin/employee'? 'bg-[#3D50FC] text-white':'bg-white'} flex gap-2   items-center rounded-lg p-2`}>
             <span>
                 <svg width="24"  height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -185,9 +209,9 @@ function Employees() {
 
     {/* Add Employee Modal */}
         <section 
-        ref={importRef}
+        ref={addEmployeeRef}
         className={`flex-1 fixed top-0 right-0 h-full w-[90vw] bg-[#172448] p-10 transition-transform duration-300 ease-in-out transform ${
-          showImport ? 'translate-x-0' : 'translate-x-full'
+          showAddEmployee ? 'translate-x-0' : 'translate-x-full'
         }  overflow-y-auto`}
       >
         <h1 className='text-white'>Add employee</h1> {/* Patrick import the Add Employee component here */}
@@ -203,6 +227,14 @@ function Employees() {
       )}
 
       {/* Import Employee pop up(component handled by grace will be imported here as a pop up) */}
+      <section 
+        ref={importRef}
+        className={`flex-1 fixed top-0 right-0 h-full w-[90vw] bg-[#172448] p-10 transition-transform duration-300 ease-in-out transform ${
+          showImport ? 'translate-x-0' : 'translate-x-full'
+        }  overflow-y-auto`}
+      >
+        <h1 className='text-white'>Import</h1> {/* Patrick import the Add Employee component here */}
+        </section>
       
 
        

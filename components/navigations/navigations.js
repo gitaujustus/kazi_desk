@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { FaMoon } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { ThemeToggle } from './theme-toggle';
+import { ThemeToggle } from '../theme-toggle';
 import Link from 'next/link';
 
 const Navbar = () => {

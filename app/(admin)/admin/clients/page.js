@@ -2,13 +2,13 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { FaSearch } from 'react-icons/fa';
 import { IoMdSettings } from "react-icons/io";
-import ContactsTable from '@/components/contactsTable';
+import ContactsTable from '@/components/leads/leadsContactsTable';
 import LeadsNav from '@/components/leads/leadsMenuBar';
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import ClientTable from '@/components/clients/clientTable';
-import { Account, AccountVerificationIcon, ExportIcon, ImportIcon } from '@/components/svg/icons';
+import { Account, AccountVerificationIcon, ExportIcon, ImportIcon } from '@/components/ui/svg/icons';
 import ImportClient from '@/components/clients/importClient';
 
 
@@ -51,8 +51,8 @@ function Clients() {
  
 
   return (
-    <main className='bg-[#C7C7C7] rounded-lg mx-5 px-3 py-3 relative'>
-        <p className='font-bold text-2xl text-left py-5'>Lead Contact</p>
+    <main className='bg-[#C7C7C7] rounded-lg mx-5 px-3 py-3 '>
+        <p className='font-bold text-2xl text-left py-5'>Clients</p>
         {/* search and filters */}
         <section className='flex flex-wrap bg-white gap-3 w-full p-4 rounded-lg justify-between'>
            <div className='flex flex-wrap gap-3 items-center'>
@@ -75,7 +75,7 @@ function Clients() {
            <input 
               type="text"
               placeholder='Start Typing To Search'
-              className="w-full bg-[#343434] dark:bg-[#202020] text-white rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              className="w-full  bg-[#343434] dark:bg-[#202020] text-white rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-300"
               />
               <FaSearch className="absolute left-3 top-2.5 text-gray-400" size={18} />
             </div>

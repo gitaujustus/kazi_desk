@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { UploadIcon } from '../svg/icons';
+import { UploadIcon } from '../ui/svg/icons';
 import { BiUpload } from "react-icons/bi";
 
 const ImportClient = () => {

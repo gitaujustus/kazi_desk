@@ -7,11 +7,13 @@ import ActionButtonForProfile from '@/components/ui/ActionButtonForProfile';
 function Profile({params}) {
 
     const Name="Mr Abraham Ruto"
+    console.log(params.profile);  
 
   return (
     <main className='bg-[#C7C7C7] rounded-lg mx-2 md:mx-5 px-3 py-3 min-h-screen'>
         <h1 className='text-[#172448] my-4 text-2xl md:text-3xl font-semibold'>{Name}</h1>
-       <MenuBar lead={params.lead}/>
+       <MenuBar lead={params.profile}/>
+       
 
         {/* profile */}
        <section className='mx-2 md:mx-4 rounded-lg bg-[#172448] my-5 min-h-[50vh]'>

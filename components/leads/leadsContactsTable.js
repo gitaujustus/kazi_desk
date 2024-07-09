@@ -67,7 +67,7 @@ const ContactsTable = ({ contacts }) => {
                 {openMenuId === contact.id && (
                   <div ref={menuRef} className="absolute right-16  w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
                     <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                      <Link href="/admin/leads/profile" className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"><TiEye size={22}/>View</Link>
+                      <Link href="/admin/leads/leadscontact/profile" className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"><TiEye size={22}/>View</Link>
                       <button className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"><MdEditSquare size={22}/>Edit</button>
                       <button className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"><TiEye size={22}/>Delete</button>
                     </div>

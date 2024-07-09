@@ -38,7 +38,7 @@
 
 import React, { useState } from 'react'
 import Link from "next/link";
-import { ArtIcon, Linkicon, NotificationIcon, SendIcon } from '@/components/svg/icons';
+import { ArtIcon, Linkicon, NotificationIcon, SendIcon } from '@/components/ui/svg/icons';
 
 const InviteEmployees = () => {
   const [inviteMethod, setInviteMethod] = useState('email');

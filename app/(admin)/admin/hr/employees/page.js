@@ -3,10 +3,11 @@ import React, { useState, useRef, useEffect } from 'react'
 import { FaSearch } from 'react-icons/fa';
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ExportIcon, ImportIcon } from '@/components/svg/icons';
+import { ExportIcon, ImportIcon } from '@/components/ui/svg/icons';
 import ImportClient from '@/components/clients/importClient';
 import EmployeeTable from '@/components/employee/employeeTable';
 import EmailInvite from '@/components/employee/invite/email';
+
 
 
 
@@ -235,7 +236,7 @@ function Employees() {
       >
         <h1 className='text-white'>Import</h1> {/* Patrick import the Add Employee component here */}
         </section>
-      
+
 
        
     </main>

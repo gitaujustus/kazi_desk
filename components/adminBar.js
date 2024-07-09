@@ -8,16 +8,16 @@ import { FaClock } from "react-icons/fa";
 import { ThemeToggle } from './theme-toggle';
 import { IoLogOut } from "react-icons/io5";
 
-const AdminNavbar = () => {
+const AdminBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const EmployeeID="EMP1"
   return (
-    <nav className="py-2 px-6 bg-white dark:bg-[#3B3B3B]">
+    <div className="py-2 px-6 z-20  fixed top-0 w-full md:static  bg-white dark:bg-[#3B3B3B]">
       <div className="container mx-auto">
         <div className="flex items-center justify-between ">
           {/* Admin Profile and Search */}
-          <div className="flex items-center  md:gap-32 lg:gap-44 space-x-4 flex-grow w-2/3 ">
+          <div className="flex items-center ml-6 md:ml-0  md:gap-16 lg:gap-44 space-x-4 flex-grow w-2/3 ">
            <div className='flex items-center gap-2'>
             <img
                 src="https://avatars.githubusercontent.com/u/113968776?v=4"
@@ -84,8 +84,8 @@ const AdminNavbar = () => {
           </div>
         )}
       </div>
-    </nav>
+    </div>
   );
 };
 
-export default AdminNavbar;
+export default AdminBar;

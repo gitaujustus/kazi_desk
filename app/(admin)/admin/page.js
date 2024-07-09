@@ -1,6 +1,6 @@
 import AdminBar from '@/components/adminBar'
-import MyCalendar from '@/components/mycalender';
-import ConditionalNavigation from '@/components/records';
+import MyCalendar from '@/components/dashboard/mycalender';
+import ConditionalNavigation from '@/components/dashboard/recordsEventsNav';
 import Image from 'next/image'
 import React from 'react'
 import { CiSettings } from "react-icons/ci";

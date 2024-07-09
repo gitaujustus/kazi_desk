@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { FaSearch } from 'react-icons/fa';
 import { IoMdSettings } from "react-icons/io";
-import ContactsTable from '@/components/contactsTable';
+import ContactsTable from '@/components/leads/leadsContactsTable';
 import LeadsNav from '@/components/leads/leadsMenuBar';
 import { MdOutlineCloudUpload } from "react-icons/md";
 import StyledCheckBox from '@/components/ui/checkboxStyle';
@@ -106,14 +106,14 @@ function Deal() {
             </header>
 
         <div className='flex gap-2'>
-        <Link href={'/admin/deals'} className='border border-black p-2 rounded-full bg-[#172448]'>
+        <Link href={'/admin/leads/deals'} className='border border-black p-2 rounded-full bg-[#172448]'>
                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M15 3.75V26.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M23.75 3.75H6.25C4.86929 3.75 3.75 4.86929 3.75 6.25V23.75C3.75 25.1307 4.86929 26.25 6.25 26.25H23.75C25.1307 26.25 26.25 25.1307 26.25 23.75V6.25C26.25 4.86929 25.1307 3.75 23.75 3.75Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M3.75 11.25H26.25M3.75 18.75H26.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </Link>
-            <Link href={'/admin/deals/kanbanview'} className='border border-black p-2 rounded-full bg-white '>
+            <Link href={'/admin/leads/deals/kanbanview'} className='border border-black p-2 rounded-full bg-white '>
                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_166_2570)">
                         <path d="M4.6875 0C3.69294 0 2.73911 0.395088 2.03585 1.09835C1.33259 1.80161 0.9375 2.75544 0.9375 3.75V26.25C0.9375 27.2446 1.33259 28.1984 2.03585 28.9016C2.73911 29.6049 3.69294 30 4.6875 30H25.3125C26.3071 30 27.2609 29.6049 27.9641 28.9016C28.6674 28.1984 29.0625 27.2446 29.0625 26.25V3.75C29.0625 2.75544 28.6674 1.80161 27.9641 1.09835C27.2609 0.395088 26.3071 0 25.3125 0L4.6875 0ZM14.0625 3.75H15.9375C16.4348 3.75 16.9117 3.94754 17.2633 4.29917C17.615 4.65081 17.8125 5.12772 17.8125 5.625V11.25C17.8125 11.7473 17.615 12.2242 17.2633 12.5758C16.9117 12.9275 16.4348 13.125 15.9375 13.125H14.0625C13.5652 13.125 13.0883 12.9275 12.7367 12.5758C12.385 12.2242 12.1875 11.7473 12.1875 11.25V5.625C12.1875 5.12772 12.385 4.65081 12.7367 4.29917C13.0883 3.94754 13.5652 3.75 14.0625 3.75ZM4.6875 5.625C4.6875 5.12772 4.88504 4.65081 5.23667 4.29917C5.58831 3.94754 6.06522 3.75 6.5625 3.75H8.4375C8.93478 3.75 9.41169 3.94754 9.76332 4.29917C10.115 4.65081 10.3125 5.12772 10.3125 5.625V18.75C10.3125 19.2473 10.115 19.7242 9.76332 20.0758C9.41169 20.4275 8.93478 20.625 8.4375 20.625H6.5625C6.06522 20.625 5.58831 20.4275 5.23667 20.0758C4.88504 19.7242 4.6875 19.2473 4.6875 18.75V5.625ZM21.5625 3.75H23.4375C23.9348 3.75 24.4117 3.94754 24.7633 4.29917C25.115 4.65081 25.3125 5.12772 25.3125 5.625V24.375C25.3125 24.8723 25.115 25.3492 24.7633 25.7008C24.4117 26.0525 23.9348 26.25 23.4375 26.25H21.5625C21.0652 26.25 20.5883 26.0525 20.2367 25.7008C19.885 25.3492 19.6875 24.8723 19.6875 24.375V5.625C19.6875 5.12772 19.885 4.65081 20.2367 4.29917C20.5883 3.94754 21.0652 3.75 21.5625 3.75Z" fill="#172448"/>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MdClose, MdFileUpload } from 'react-icons/md';
+import { IoMdCloudUpload } from "react-icons/io";
 
 const AddEmployee = ({ onClose }) => {
   const [formData, setFormData] = useState({
@@ -108,7 +109,7 @@ const AddEmployee = ({ onClose }) => {
                     <div>
                         <label htmlFor="profilePicture">Profile Picture</label>
                         <div className='bg-gray-900 text-white w-52 h-52 flex flex-col gap-2 justify-center items-center'>
-                            <MdFileUpload size={64} />
+                            <IoMdCloudUpload size={64} />
                             <input type="file" id="profilePicture" name="profilePicture" value={formData.profilePicture} onChange={handleChange} className='w-44'  />
                         </div>
                     </div>

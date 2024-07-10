@@ -8,6 +8,7 @@ import ImportClient from '@/components/clients/importClient';
 import EmployeeTable from '@/components/employee/employeeTable';
 import EmailInvite from '@/components/employee/invite/email';
 import AddEmployee from '@/components/employee/addEmployee';
+import AssignBulkShifts from '@/components/shift/assignBulkShifts';
 
 
 
@@ -216,7 +217,7 @@ function Employees() {
           showAddEmployee ? 'translate-x-0' : 'translate-x-full'
         }  overflow-y-auto`}
       >
-        <h1 className='text-white'><AddEmployee /></h1> {/* Patrick import the Add Employee component here */}
+        <h1 className='text-white'><AddEmployee /> </h1> {/* Patrick import the Add Employee  component here */}
         </section>
 
     {/* Invite Employee Modal End */}

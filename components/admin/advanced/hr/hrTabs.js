@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 import HrLowerPills from "./hrLowerNav";
-import ClientLowerPills from "./clientLowerNav";
+import ClientLowerPills from "../client/clientLowerNav";
 const HrTabs = () => {
 
     const [activeItem, setActiveItem] = useState('Department Wise Employee');

@@ -1,26 +1,18 @@
-// "use client"
-// import { useState } from "react";
 import NavPills from "@/components/advancedNavigation";
-import HrTabs from "@/components/hrTabs";
-import LowerPills from "@/components/overviewLowerNav";
+import HrTabs from "@/components/admin/advanced/hr/hrTabs";
 import { BsPersonFill } from "react-icons/bs";
 import { FaPeopleGroup } from "react-icons/fa6";
-import { FaLeaf, FaBirthdayCake } from 'react-icons/fa';
-import { FaClock } from "react-icons/fa6";
 import { MdOutlinePendingActions } from "react-icons/md";
 import { TbBriefcaseFilled } from "react-icons/tb";
 import { FaFileInvoice } from "react-icons/fa6";
-import { CiViewList } from "react-icons/ci";
-import { IoTicket } from "react-icons/io5";
-import { TbWaveSawTool } from "react-icons/tb";
-import ClientTabs from "@/components/clientTabs";
+import { FaRegCalendarTimes } from "react-icons/fa";
+import { GiPalmTree } from "react-icons/gi";
+import { FaBirthdayCake } from "react-icons/fa";
+import { FaDatabase } from "react-icons/fa";
 
 const HR = () => {
-    // const [activeItem, setActiveItem] = useState('Income');
-    // const navItems = ['Income', 'Timesheet', 'Pending Leaves', 'Open Tickets', 'Pending Tasks', 'Pending FollowUp'];
     let leavesApproved = 20;
     let totalEmployees = 20;
-    let newEmployees = 20;
     let employeesExits = 0;
     let todaysAttendance = 0;
     let totalAttendance = 4;
@@ -94,15 +86,15 @@ const HR = () => {
                     
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-9 ">
                          <div className="bg-blue-theme rounded-lg w-1/2 h-44">
-                            <div className="border-b border-gray-200"><h1 className="text-white text-center my-4 font-semibold text-md">Leaves Taken <span className="mx-1">icon</span></h1></div>
-                                <div className="h-36">
-                                    <h3 className="bg-gray-300 text-blue-theme text-center  w-24 sm:w-44 h-16 sm:h-24 rounded-lg mx-auto my-5">No Records Found</h3>
+                            <div className="border-b border-gray-200"><h1 className="text-white text-center my-4 font-semibold text-md flex justify-between mx-4">Leaves Taken <span className="mx-1"><GiPalmTree /></span></h1></div>
+                                <div className="h-36 my-4">
+                                    <h3 className="flex flex-col items-center bg-gray-300 text-blue-theme text-center w-24 sm:w-44  rounded-lg mx-auto py-5"><FaDatabase /><span>No Records Found</span></h3>
                                 </div>
                         </div>
                         <div className="bg-blue-theme rounded-lg w-1/2 h-44">
-                            <div className="border-b border-gray-200"><h1 className="text-white text-center my-4 font-semibold text-md">Birthdays<span className="mx-1">icon</span></h1></div>
-                                <div className="h-36">
-                                    <h3 className="bg-gray-300 text-blue-theme text-center  w-24 sm:w-44 h-16 sm:h-24 rounded-lg mx-auto my-5">No Records Found</h3>
+                            <div className="border-b border-gray-200"><h1 className="text-white text-center my-4 font-semibold text-md flex justify-between mx-4">Birthdays<span className="mx-1"><FaBirthdayCake /></span></h1></div>
+                                <div className="h-36 my-4">
+                                    <h3 className="flex flex-col items-center bg-gray-300 text-blue-theme text-center w-24 sm:w-44  rounded-lg mx-auto py-5"><FaDatabase /><span>No Records Found</span></h3>
                                 </div>
                         </div>
                     </div>
@@ -110,17 +102,20 @@ const HR = () => {
                     <div className="bg-blue-theme rounded-lg ">
                         <div className="flex justify-between border-b border-gray-300 px-4 py-4 my-4 text-white font-semibold">
                             <h1>Late Attendance</h1>
-                            <p>Calendar icon</p>
+                            <p><FaRegCalendarTimes /></p>
                         </div>
                         <div className="h-36">
-                                    <h3 className="bg-gray-300 text-blue-theme text-center w-24 sm:w-44 h-16 sm:h-24 rounded-lg mx-auto my-5">No Records Found</h3>
-                                </div>
+                            <h3 className="flex flex-col items-center bg-gray-300 text-blue-theme text-center w-24 sm:w-44  rounded-lg mx-auto py-5"><FaDatabase /><span>No Records Found</span></h3>
+                        </div>
                     </div>
+
+                   
 
 
                  
                 </div>
             </section>  
+           
         </main>
     );
 }

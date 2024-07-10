@@ -12,7 +12,7 @@ import { FaFileInvoice } from "react-icons/fa6";
 import { CiViewList } from "react-icons/ci";
 import { IoTicket } from "react-icons/io5";
 import { TbWaveSawTool } from "react-icons/tb";
-import FinanceTabs from "@/components/financeTabs";
+import FinanceTabs from "@/components/admin/advanced/finance/financeTabs";
 
 
 

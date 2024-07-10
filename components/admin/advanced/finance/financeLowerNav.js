@@ -1,39 +1,40 @@
 "use client"
 import React, { useState } from 'react';
-import LatestClients from './leads/latestClients';
-import ClientWiseEarnings from './clientWiseEarning';
-import ClientWiseTimelogs from './clientWiseTimelogs';
-import DealCount from './dealCount';
-import LeadsCount from './leadsCount';
-import RecentLogin from './recentLogin';
+import LatestClients from '../../../leads/latestClients';
+import ClientWiseEarnings from '../client/clientWiseEarning';
+import ClientWiseTimelogs from '../client/clientWiseTimelogs';
+import DealCount from '../client/dealCount';
+import LeadsCount from '../client/leadsCount';
+import RecentLogin from '../client/recentLogin';
+import InvoiceOverview from '../../../invoiceOverview';
+import EstimateOverview from './estimateOverview';
+import ProposalOverview from './proposalOverview';
+import EarningsByProjects from './earningsByProjects';
 // import NotEnoughData from './notEnoughData';
 
 const ClientLowerPills = () => {
-    const [activePill, setActivePill] = useState('ClientWiseEarnings');
+    const [activePill, setActivePill] = useState('InvoiceOverview');
 
     const pillItems = [
+        { id: 'InvoiceOverview', label: "Invoice Overview" },
+        { id: 'EstimateOverview', label: "Estimate Overview" },
+        { id: 'ProposalOverview', label: "Proposal Overview" },
         { id: 'ClientWiseEarnings', label: "Client Wise Earnings" },
-        { id: 'ClientWiseTimelogs', label: "Client Wise Timelogs" },
-        { id: 'DealCountByStagesAndPipeline', label: "Deal Count By Stages And Pipeline" },
-        { id: 'LeadsCountBySource', label: "Leads Count By Source" },
-        { id: 'LatestClients', label: "Latest Clients" },
-        { id: 'RecentloginActivities', label: "Recent login Activities" },
+        { id: 'EarningsByProjects', label: "Earnings By Projects" },
     ];
 
     const renderContent = () => {
         switch (activePill) {
+            case 'InvoiceOverview':
+                return <InvoiceOverviewContent />;
+            case 'EstimateOverview':
+                return <EstimateOverviewContent />;
+            case 'ProposalOverview':
+                return <ProposalOverviewContent />;
             case 'ClientWiseEarnings':
-                return <ClientWiseEarningContent />;
-            case 'ClientWiseTimelogs':
-                return <ClientWiseTimelogsContent />;
-            case 'DealCountByStagesAndPipeline':
-                return <DealCountByStagesAndPipelineContent />;
-            case 'LeadsCountBySource':
-                return <LeadsCountBySourceContent />;
-            case 'LatestClients':
-                return <LatestClientsContent />;
-            case 'RecentloginActivities':
-                return <RecentLoginActivitiesContent />;
+                return <ClientWiseEarningsContent />;
+            case 'EarningsByProjects':
+                return <EarningsByProjectsContent />;
             default:
                 return <NotEnoughData />;
         }
@@ -64,12 +65,11 @@ const ClientLowerPills = () => {
 };
 
 // Placeholder components for each content type
-const ClientWiseEarningContent = () => <div><ClientWiseEarnings /></div>;
-const ClientWiseTimelogsContent = () => <div><ClientWiseTimelogs /></div>;
-const DealCountByStagesAndPipelineContent = () => <div><DealCount /> </div>;
-const LeadsCountBySourceContent = () => <div><LeadsCount /></div>;
-const LatestClientsContent = () => <div><LatestClients /></div>;
-const RecentLoginActivitiesContent = () => <div><RecentLogin /></div>;
+const InvoiceOverviewContent = () => <div><InvoiceOverview /></div>;
+const EstimateOverviewContent = () => <div><EstimateOverview /></div>;
+const ProposalOverviewContent = () => <div><ProposalOverview /> </div>;
+const ClientWiseEarningsContent = () => <div><ClientWiseEarnings /></div>;
+const EarningsByProjectsContent = () => <div><EarningsByProjects /></div>;
 const NotEnoughData = () => (
     <div className="text-center py-8">
         <div className="bg-gray-200 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">

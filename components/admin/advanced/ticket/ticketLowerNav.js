@@ -1,40 +1,31 @@
 "use client"
 import React, { useState } from 'react';
-import LatestClients from './leads/latestClients';
-import ClientWiseEarnings from './clientWiseEarning';
-import ClientWiseTimelogs from './clientWiseTimelogs';
-import DealCount from './dealCount';
-import LeadsCount from './leadsCount';
-import RecentLogin from './recentLogin';
-import InvoiceOverview from './invoiceOverview';
-import EstimateOverview from './estimateOverview';
-import ProposalOverview from './proposalOverview';
-import EarningsByProjects from './earningsByProjects';
+import TypeWiseTicket from './typeWiseTicket';
+import StatusWiseTicket from './statusWiseTicket';
+import ChannelWiseTicket from './admin/advanced/ticket/channelWiseTicket';
+import OpenTickets from './openTickets';
 // import NotEnoughData from './notEnoughData';
 
 const ClientLowerPills = () => {
-    const [activePill, setActivePill] = useState('InvoiceOverview');
+    const [activePill, setActivePill] = useState('TypeWiseTicket');
 
     const pillItems = [
-        { id: 'InvoiceOverview', label: "Invoice Overview" },
-        { id: 'EstimateOverview', label: "Estimate Overview" },
-        { id: 'ProposalOverview', label: "Proposal Overview" },
-        { id: 'ClientWiseEarnings', label: "Client Wise Earnings" },
-        { id: 'EarningsByProjects', label: "Earnings By Projects" },
+        { id: 'TypeWiseTicket', label: "Type Wise Ticket" },
+        { id: 'StatusWiseTicket', label: "Status Wise Ticket" },
+        { id: 'ChannelWiseTicket', label: "Channel Wise Ticket" },
+        { id: 'OpenTickets', label: "Open Tickets" },
     ];
 
     const renderContent = () => {
         switch (activePill) {
-            case 'InvoiceOverview':
-                return <InvoiceOverviewContent />;
-            case 'EstimateOverview':
-                return <EstimateOverviewContent />;
-            case 'ProposalOverview':
-                return <ProposalOverviewContent />;
-            case 'ClientWiseEarnings':
-                return <ClientWiseEarningsContent />;
-            case 'EarningsByProjects':
-                return <EarningsByProjectsContent />;
+            case 'TypeWiseTicket':
+                return <TypeWiseTicketContent />;
+            case 'StatusWiseTicket':
+                return <StatusWiseTicketContent />;
+            case 'ChannelWiseTicket':
+                return <ChannelWiseTicketContent />;
+            case 'OpenTickets':
+                return <OpenTicketsContent />;
             default:
                 return <NotEnoughData />;
         }
@@ -65,11 +56,10 @@ const ClientLowerPills = () => {
 };
 
 // Placeholder components for each content type
-const InvoiceOverviewContent = () => <div><InvoiceOverview /></div>;
-const EstimateOverviewContent = () => <div><EstimateOverview /></div>;
-const ProposalOverviewContent = () => <div><ProposalOverview /> </div>;
-const ClientWiseEarningsContent = () => <div><ClientWiseEarnings /></div>;
-const EarningsByProjectsContent = () => <div><EarningsByProjects /></div>;
+const TypeWiseTicketContent = () => <div><TypeWiseTicket /></div>;
+const StatusWiseTicketContent = () => <div><StatusWiseTicket /></div>;
+const ChannelWiseTicketContent = () => <div><ChannelWiseTicket /> </div>;
+const OpenTicketsContent = () => <div><OpenTickets /></div>;
 const NotEnoughData = () => (
     <div className="text-center py-8">
         <div className="bg-gray-200 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">

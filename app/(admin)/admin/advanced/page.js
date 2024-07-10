@@ -1,7 +1,7 @@
 // "use client"
 // import { useState } from "react";
 import NavPills from "@/components/advancedNavigation";
-import OverviewLowerPills from "@/components/overviewLowerNav";
+import OverviewLowerPills from "@/components/admin/advanced/overview/overviewLowerNav";
 import { BsPersonFill } from "react-icons/bs";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { FaClock } from "react-icons/fa6";
@@ -11,7 +11,7 @@ import { FaFileInvoice } from "react-icons/fa6";
 import { CiViewList } from "react-icons/ci";
 import { IoTicket } from "react-icons/io5";
 import { TbWaveSawTool } from "react-icons/tb";
-import OverviewTabs from "@/components/overviewTabs";
+import OverviewTabs from "@/components/admin/advanced/overview/overviewTabs";
 
 const Overview = () => {
     // const [activeItem, setActiveItem] = useState('Income');

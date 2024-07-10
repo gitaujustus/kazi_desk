@@ -1,45 +1,39 @@
 "use client"
 import React, { useState } from 'react';
-import LatestClients from './leads/latestClients';
+import LatestClients from '../../../leads/latestClients';
 import ClientWiseEarnings from './clientWiseEarning';
 import ClientWiseTimelogs from './clientWiseTimelogs';
 import DealCount from './dealCount';
 import LeadsCount from './leadsCount';
 import RecentLogin from './recentLogin';
-import DepartmentWiseEmp from './departmentWiseEmp';
-import DesignationWiseEmp from './designationWiseEmp';
-import GenderWiseEmp from './genderWiseEmp';
-import RoleWiseEmp from './roleWiseEmp';
-import HeadCount from './headCount';
-import JoinVsAttrition from './joinVsAttrition';
 // import NotEnoughData from './notEnoughData';
 
-const HrLowerPills = () => {
-    const [activePill, setActivePill] = useState('DepartmentWiseEmployee');
+const ClientLowerPills = () => {
+    const [activePill, setActivePill] = useState('ClientWiseEarnings');
 
     const pillItems = [
-        { id: 'DepartmentWiseEmployee', label: "Department Wise Employee" },
-        { id: 'DesignationWiseEmployee', label: "Designation Wise Employee" },
-        { id: 'GenderWiseEmployee', label: "Gender Wise Employee" },
-        { id: 'RoleWiseEmployee', label: "Role Wise Employee" },
-        { id: 'HeadCount', label: "Headcount" },
-        { id: 'JoiningVsAttrition', label: "Joining Vs Attrition" },
+        { id: 'ClientWiseEarnings', label: "Client Wise Earnings" },
+        { id: 'ClientWiseTimelogs', label: "Client Wise Timelogs" },
+        { id: 'DealCountByStagesAndPipeline', label: "Deal Count By Stages And Pipeline" },
+        { id: 'LeadsCountBySource', label: "Leads Count By Source" },
+        { id: 'LatestClients', label: "Latest Clients" },
+        { id: 'RecentloginActivities', label: "Recent login Activities" },
     ];
 
     const renderContent = () => {
         switch (activePill) {
-            case 'DepartmentWiseEmployee':
-                return <DepartmentWiseEmployeeContent />;
-            case 'DesignationWiseEmployee':
-                return <DesignationWiseEmployeeContent />;
-            case 'GenderWiseEmployee':
-                return <GenderWiseEmployeeContent />;
-            case 'RoleWiseEmployee':
-                return <RoleWiseEmployeeContent />;
-            case 'HeadCount':
-                return <HeadCount />;
-            case 'JoiningVsAttrition':
-                return <JoiningVsAttritionContent />;
+            case 'ClientWiseEarnings':
+                return <ClientWiseEarningContent />;
+            case 'ClientWiseTimelogs':
+                return <ClientWiseTimelogsContent />;
+            case 'DealCountByStagesAndPipeline':
+                return <DealCountByStagesAndPipelineContent />;
+            case 'LeadsCountBySource':
+                return <LeadsCountBySourceContent />;
+            case 'LatestClients':
+                return <LatestClientsContent />;
+            case 'RecentloginActivities':
+                return <RecentLoginActivitiesContent />;
             default:
                 return <NotEnoughData />;
         }
@@ -70,12 +64,12 @@ const HrLowerPills = () => {
 };
 
 // Placeholder components for each content type
-const DepartmentWiseEmployeeContent = () => <div><DepartmentWiseEmp /></div>;
-const DesignationWiseEmployeeContent = () => <div><DesignationWiseEmp /></div>;
-const GenderWiseEmployeeContent = () => <div><GenderWiseEmp /> </div>;
-const RoleWiseEmployeeContent = () => <div><RoleWiseEmp /></div>;
-const HeadcountContent = () => <div><HeadCount /></div>;
-const JoiningVsAttritionContent = () => <div><JoinVsAttrition /></div>;
+const ClientWiseEarningContent = () => <div><ClientWiseEarnings /></div>;
+const ClientWiseTimelogsContent = () => <div><ClientWiseTimelogs /></div>;
+const DealCountByStagesAndPipelineContent = () => <div><DealCount /> </div>;
+const LeadsCountBySourceContent = () => <div><LeadsCount /></div>;
+const LatestClientsContent = () => <div><LatestClients /></div>;
+const RecentLoginActivitiesContent = () => <div><RecentLogin /></div>;
 const NotEnoughData = () => (
     <div className="text-center py-8">
         <div className="bg-gray-200 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
@@ -87,4 +81,4 @@ const NotEnoughData = () => (
     </div>
 );
 
-export default HrLowerPills;
+export default ClientLowerPills;

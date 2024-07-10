@@ -1,5 +1,6 @@
 import { FaDatabase } from "react-icons/fa";
-import './chartConfig'
+import '../../../chartConfig'
+import ChartConfig from '../../../chartConfig';
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,

@@ -118,7 +118,7 @@ const NavigationSidebar = () => {
       <NavItem icon={FaUsers} title="HR" subItems={[
         { title: "Employees", href: "/admin/hr/employees" },
         { title: "Leaves", href: "/admin/hr/leaves" },
-        { title: "Shift Roaster", href: "/admin/hr/shift-roaster" },
+        { title: "Shift Roaster", href: "/admin/hr/shiftroaster" },
         { title: "Attendance", href: "/admin/hr/attendance" },
         { title: "Holiday", href: "/admin/hr/holiday" },
         { title: "Designation", href: "/admin/hr/designation" },

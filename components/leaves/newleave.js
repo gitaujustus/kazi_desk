@@ -1,10 +1,10 @@
 'use client'
 import React from 'react'
 
-const page = () => {
+const NewLeave = () => {
   return (
-    <div className="bg-[#172448] px-4 py-8" >
-        <div className='p-3 bg-white max-w-5xl mx-auto text-sm rounded-lg'>
+    <div className="bg-[#172448] px-4 py-8 z-50" >
+        <form action='' className='p-3 bg-white max-w-5xl mx-auto text-sm rounded-lg'>
             <p className='text-3xl font-bold text-center'>New Leave</p>
             <p className='text-3xl font-semibold py-8'>Assign Leave</p>
             <div className='flex flex-col md:flex-row justify-between'>
@@ -33,8 +33,7 @@ const page = () => {
             </div>
 
             <p className='pt-4'>Select Duration</p>
-            <div className='flex flex-col gap-12'>
-                
+            <div className='flex flex-wrap py-3 gap-6 md:gap-12'>
                 <div>
                     <div>
                         <input type="radio" />
@@ -45,21 +44,19 @@ const page = () => {
                         <input type="radio"/>
                         <label htmlFor="">Multiple</label>
                     </div>
-
                 </div>
-
                 <div>
                     <div>
                         <input type="radio"/>
-                        <label htmlFor="">First Half</label>
-                    </div>
+                            <label htmlFor="">First Half</label>
+                        </div>
 
-                    <div className='py-3'>
-                        <input type="radio" className='rounded-[100%]'/>
-                        <label htmlFor="">Second Half</label>
-                    </div>
-
+                        <div className='py-3'>
+                            <input type="radio" className='rounded-[100%]'/>
+                            <label htmlFor="">Second Half</label>
+                        </div>
                 </div>
+                
                 <div className='flex flex-col'>
                     <label>Leave Type</label>
                     <input type='text' className='border border-gray-400 rounded-lg p-2 '/>
@@ -69,7 +66,7 @@ const page = () => {
 
             <div className='flex flex-col py-2'>
                 <label>Reason for absense*</label>
-                <input type="text" placeholder='e.g. Feeling unwell' className='border border-gray-400 rounded-lg h-[30vh] text-start'/>
+                <textarea name="reason" ceholder='e.g. Feeling unwell' id="reason"  rows={6} className='border border-gray-400 rounded-md'></textarea>
             </div>
 
             <div>
@@ -87,13 +84,13 @@ const page = () => {
             </div>
 
             <div className='text-xs pt-8'>
-                <button className='bg-[#3D50FC] text-white px-8 py-2 rounded-md '>Save</button>
+                <button type='submit' className='bg-[#3D50FC] text-white px-8 py-2 rounded-md '>Save</button>
                 <button className='bg-gray-300 px-8 py-2 rounded-md ml-4'>Cancel</button>
             </div>
-        </div>
+        </form>
        
     </div>
   )
 }
 
-export default page
+export default NewLeave

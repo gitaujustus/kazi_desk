@@ -11,7 +11,7 @@ import ImportLeads from '@/components/leads/importleads';
 
 
 
-function leadcontact() {
+function Leadcontact() {
   const contacts=([
     { id: 1, name: 'Abraham Ryle', company: 'Company X', email: 'example@example.com', addedBy: 'Amon Were', created: '20-05-2024', status: 'inactive' },
     { id: 2, name: 'Abraham Ryle', company: 'Company X', email: 'example@example.com', addedBy: 'Amon Were', created: '20-05-2024', status: 'inactive' },
@@ -95,7 +95,7 @@ function leadcontact() {
                 <path d="M19 12.998H13V18.998H11V12.998H5V10.998H11V4.99805H13V10.998H19V12.998Z" fill="black"/>
                 </svg>
             </span>
-            AddLeadContact
+            Add Lead Contact
         </Link>
 
             <Link href={'/admin/leads/leadform'} className={`${pathname === '/admin/leads/leadform'? 'bg-[#3D50FC] text-white':'bg-white'} flex gap-2 items-center rounded-lg p-2`}>
@@ -104,7 +104,7 @@ function leadcontact() {
                     <path d="M20.71 7.04055C21.1 6.65055 21.1 6.00055 20.71 5.63055L18.37 3.29055C18 2.90055 17.35 2.90055 16.96 3.29055L15.12 5.12055L18.87 8.87055M3 17.2505V21.0005H6.75L17.81 9.93055L14.06 6.18055L3 17.2505Z" fill="#172448"/>
                     </svg>
                 </span>
-                LeadForm
+                Lead Form
             </Link>
             <button onClick={()=> setShowImport(true)} className={`text-black bg-white flex gap-2 items-center rounded-lg p-2`}>
                 <span>
@@ -128,10 +128,6 @@ function leadcontact() {
         </button>
     </section>
 
-        {/* <LeadsNav/> */}
-
-
-
       <ContactsTable contacts={contacts}/>
         {/* footers */}
        <section className="flex flex-wrap bg-white p-4 justify-between items-center rounded-b-lg">
@@ -152,11 +148,10 @@ function leadcontact() {
           </div>
         </section>
 
-
         {/* Import */} 
         <section 
         ref={importRef}
-        className={`flex-1 fixed top-0 right-0 h-full w-[90vw] bg-[#172448] p-10 transition-transform duration-300 ease-in-out transform ${
+        className={`flex-1 fixed z-50 top-0 right-0 h-full w-[90vw] bg-[#172448] p-2 sm:p-10 transition-transform duration-300 ease-in-out transform ${
           showImport ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -166,4 +161,4 @@ function leadcontact() {
   )
 }
 
-export default leadcontact
+export default Leadcontact

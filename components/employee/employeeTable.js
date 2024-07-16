@@ -67,7 +67,12 @@ const EmployeeTable = ({ employees }) => {
                 {employee.status}
               </td>
               <td className="px-4 py-4">{employee.email}</td>
-              <td className="px-4 py-4">{employee.userRole}</td>
+              <td className="px-4 py-4">
+                <select name="role" id="role" className='bg-[#172448] px-2 py-1 border rounded-md'>
+                  <option value="Employee">{employee.userRole}</option>
+                  <option value="AppAdministrator ">App Administrator</option>
+                </select>
+              </td>
               <td className="px-4 py-4 relative">
                 <button 
                   ref={el => buttonRefs.current[employee.id] = el}

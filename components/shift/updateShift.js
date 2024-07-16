@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { IoMdCloudUpload } from "react-icons/io";
 
-const UpdateShiftModal = ({ isOpen, onClose }) => {
+const UpdateShiftModal = ({ onClose }) => {
   const [employeeShift, setEmployeeShift] = useState('Day Off');
   const [remark, setRemark] = useState('');
 
-  // if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white rounded-lg p-6 w-96">
+    <div className="fixed inset-0 bg-black bg-opacity-50  flex justify-center items-center">
+      <div className="bg-white rounded-lg p-6 w-96 mx-2">
         <h2 className="text-xl font-bold mb-4">Update Shift</h2>
         <p className="text-sm text-gray-600 mb-4 font-semibold">Date: 10-06-2024 (Monday)</p>
         

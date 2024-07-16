@@ -74,9 +74,10 @@ function Employees() {
   const importRef = useRef(null);
 
   const [showUnviteEmployeeModel, setShowUnviteEmployeeModel] = useState(false);
-  const InviteEmployeeRef = useRef(null);
+  const inviteEmployeeRef = useRef(null);
 
   const pathname = usePathname()
+
 
 
   useEffect(() => {
@@ -84,31 +85,10 @@ function Employees() {
       if (addEmployeeRef.current && !addEmployeeRef.current.contains(event.target)) {
         setShowAddEmployee(false);
       }
-    }
-  
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  useEffect(() => {
-    function handleClickOutside(event) {
       if (importRef.current && !importRef.current.contains(event.target)) {
         setShowImport(false);
       }
-    }
-  
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-//   for showing invite employee modal
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (InviteEmployeeRef.current && !InviteEmployeeRef.current.contains(event.target)) {
+      if (inviteEmployeeRef.current && !inviteEmployeeRef.current.contains(event.target)) {
         setShowUnviteEmployeeModel(false);
       }
     }
@@ -118,7 +98,6 @@ function Employees() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
   
 
 
@@ -129,8 +108,6 @@ function Employees() {
         <p className='font-bold text-2xl text-left py-5'>Employees</p>
         {/* search and filters */}
         <section className='flex flex-wrap bg-white gap-3 w-full p-4 rounded-lg justify-between'>
-          
-
            <div className='flex gap-3 items-center'>
               <label htmlFor="">Employees</label>
               <select className='border border-gray-300 rounded-lg p-2'>
@@ -177,14 +154,6 @@ function Employees() {
             </span>
             Add Employee
         </button>
-         {/* <Link href={'/admin/employees'} className={`${pathname === '/admin/employee'? 'bg-[#3D50FC] text-white':'bg-white'} flex gap-2   items-center rounded-lg p-2`}>
-            <span>
-                <svg width="24"  height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 12.998H13V18.998H11V12.998H5V10.998H11V4.99805H13V10.998H19V12.998Z" fill="black"/>
-                </svg>
-            </span>
-            Add Employee
-        </Link> */}
          <button  onClick={() => setShowUnviteEmployeeModel(true)}  className={`${pathname === '/admin/employee'? 'bg-[#3D50FC] text-white':'bg-white'} flex gap-2   items-center rounded-lg p-2`}>
             <span>
                 <svg width="24"  height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -213,11 +182,11 @@ function Employees() {
     {/* Add Employee Modal */}
         <section 
         ref={addEmployeeRef}
-        className={`flex-1 fixed top-0 right-0 h-full w-[90vw] bg-[#172448] p-10 transition-transform duration-300 ease-in-out transform ${
+        className={`flex-1 fixed z-50 top-0 right-0 h-full w-[90vw] bg-[#172448] p-2 sm:p-10 transition-transform duration-300 ease-in-out transform ${
           showAddEmployee ? 'translate-x-0' : 'translate-x-full'
         }  overflow-y-auto`}
       >
-        <h1 className='text-white'><AddEmployee /> </h1> {/* Patrick import the Add Employee  component here */}
+        <h1 className='text-white'><AddEmployee /> </h1> 
         </section>
 
     {/* Invite Employee Modal End */}
@@ -228,16 +197,6 @@ function Employees() {
           </div>
         </div>
       )}
-
-      {/* Import Employee pop up(component handled by grace will be imported here as a pop up) */}
-      <section 
-        ref={importRef}
-        className={`flex-1 fixed top-0 right-0 h-full w-[90vw] bg-[#172448] p-10 transition-transform duration-300 ease-in-out transform ${
-          showImport ? 'translate-x-0' : 'translate-x-full'
-        }  overflow-y-auto`}
-      >
-        <h1 className='text-white'>Import</h1> {/* Patrick import the Add Employee component here */}
-        </section>
 
 
        

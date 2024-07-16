@@ -1,16 +1,10 @@
 "use client"
 import React, { useState } from 'react';
-import LatestClients from '../../../leads/latestClients';
 import ClientWiseEarnings from '../client/clientWiseEarning';
-import ClientWiseTimelogs from '../client/clientWiseTimelogs';
-import DealCount from '../client/dealCount';
-import LeadsCount from '../client/leadsCount';
-import RecentLogin from '../client/recentLogin';
-import InvoiceOverview from '../../../invoiceOverview';
+import InvoiceOverview from './invoiceOverview';
 import EstimateOverview from './estimateOverview';
 import ProposalOverview from './proposalOverview';
 import EarningsByProjects from './earningsByProjects';
-// import NotEnoughData from './notEnoughData';
 
 const ClientLowerPills = () => {
     const [activePill, setActivePill] = useState('InvoiceOverview');

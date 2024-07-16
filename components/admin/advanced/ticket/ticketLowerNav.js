@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import TypeWiseTicket from './typeWiseTicket';
 import StatusWiseTicket from './statusWiseTicket';
-import ChannelWiseTicket from './admin/advanced/ticket/channelWiseTicket';
+import ChannelWiseTicket from './channelWiseTicket';
 import OpenTickets from './openTickets';
 // import NotEnoughData from './notEnoughData';
 

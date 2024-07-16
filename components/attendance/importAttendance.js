@@ -2,12 +2,12 @@ import React from 'react'
 import { MdOutlineCloudUpload } from "react-icons/md";
 import StyledCheckBox from '@/components/ui/checkboxStyle';
 
-function ImportDeals() {
+function ImportAttendance() {
   return (
     <main>
-         <div className='bg-white w-full min-h-[70vh] rounded-lg px-10 py-5'>
-            <h1 className='text-center text-2xl font-semibold py-2'>Import Deals</h1>
-            <p className='py-2 font-semibold text-xl'>Import Deals</p>
+         <div className='bg-white w-full mx-4 min-h-[70vh] rounded-lg px-10 py-5'>
+            <h1 className='text-center text-2xl font-semibold py-2'>Import Attendance</h1>
+            <p className='py-2 font-semibold text-xl'>Import Attendance</p>
 
             <p className='p-2  bg-[#FEF2CC] rounded-md flex items-center gap-2'>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,4 +66,4 @@ function ImportDeals() {
   )
 }
 
-export default ImportDeals
+export default ImportAttendance

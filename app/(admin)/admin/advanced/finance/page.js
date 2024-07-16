@@ -1,25 +1,13 @@
 // "use client"
-// import { useState } from "react";
 import NavPills from "@/components/advancedNavigation";
-import TicketTabs from "@/components/ticketTabs";
-import { BsPersonFill } from "react-icons/bs";
-import { FaPeopleGroup } from "react-icons/fa6";
-import { FaLeaf, FaBirthdayCake } from 'react-icons/fa';
-import { FaClock } from "react-icons/fa6";
-import { MdOutlinePendingActions } from "react-icons/md";
-import { TbBriefcaseFilled } from "react-icons/tb";
 import { FaFileInvoice } from "react-icons/fa6";
-import { CiViewList } from "react-icons/ci";
 import { IoTicket } from "react-icons/io5";
-import { TbWaveSawTool } from "react-icons/tb";
 import FinanceTabs from "@/components/admin/advanced/finance/financeTabs";
 
 
 
 
 const Finance = () => {
-    // const [activeItem, setActiveItem] = useState('Income');
-    // const navItems = ['Income', 'Timesheet', 'Pending Leaves', 'Open Tickets', 'Pending Tasks', 'Pending FollowUp'];
     let paidInvoices = 20;
     let dueInvoices = 20;
     let totalPendingAmount = 13000.00;

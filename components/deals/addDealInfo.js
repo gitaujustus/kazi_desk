@@ -78,8 +78,8 @@ const AddDealInfoForm = () => {
         </div>
 
         
-        <div className="flex justify-start space-x-3">
-        <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-md flex items-center gap-2"><RiCheckFill/> Save</button>
+        <div className="flex justify-start  flex-wrap gap-2 md:space-x-3">
+          <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-md flex items-center gap-2"><RiCheckFill/> Save</button>
           <button type="button" className="px-4 py-2 bg-[#D8DCFE] text-blue-600 rounded-md flex items-center gap-2"><RiCheckDoubleFill/> Save & Add Note</button>
           <button type="button" className="px-4 py-2 border bg-[#D8DCFE] rounded-md text-gray-700">Cancel</button>
 

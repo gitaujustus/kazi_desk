@@ -2,12 +2,12 @@
 import { useState } from 'react';
 import { IoMdCloudUpload } from "react-icons/io";
 
- function assignshifts() {
+ function Assignshifts() {
   const [date, setDate] = useState('');
   const [assignType, setAssignType] = useState('date');
 
   return (
-    <div className=" min-h-screen p-8">
+    <div className=" min-h-screen">
       <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6">
         <h1 className="text-2xl text-[#172448] flex justify-center font-bold mb-6"> Assign Bulk Shifts</h1>
         <h2 className="text-xl text-[#172448] font-semibold mb-4">Add Shift Roster</h2>
@@ -36,63 +36,63 @@ import { IoMdCloudUpload } from "react-icons/io";
           </div>
         </div>
 
-        <div className='flex justify-between'>
-        <div className="mb-6 text-[#172448]">
-          <label className=" mb-2">Employee Shift</label>
-          <select className="w-full border rounded-md p-2">
-            <option className='rounded-full h-3 w-3 bg-[#772020]'>Day Off</option>
-          </select>
-        </div>
-
-        <div className="mb-6 text-[#172448]">
-          <label className=" mb-2">Assign Shift By</label>
-          <div className="flex items-center gap-4">
-            <label className="flex items-center">
-              <input
-                type="radio"
-                name="assignType "
-                value="date"
-                checked={assignType === 'date'}
-                onChange={() => setAssignType('date')}
-                className="mr-2"
-              />
-              Date
-            </label>
-            <label className="flex items-center">
-              <input
-                type="radio"
-                name="assignType"
-                value="multiple"
-                checked={assignType === 'multiple'}
-                onChange={() => setAssignType('multiple')}
-                className="mr-2"
-              />
-              Multiple
-            </label>
-            <label className="flex items-center">
-              <input
-                type="radio"
-                name="assignType"
-                value="month"
-                checked={assignType === 'month'}
-                onChange={() => setAssignType('month')}
-                className="mr-2 "
-              />
-              Month
-            </label>
+        <div className='flex justify-between flex-wrap'>
+          <div className="mb-6 text-[#172448]">
+            <label className=" mb-2">Employee Shift</label>
+            <select className="w-full border rounded-md p-2">
+              <option className='rounded-full h-3 w-3 bg-[#772020]'>Day Off</option>
+            </select>
           </div>
-        </div>
 
-        <div className="mb-6">
-          <label className="block mb-2 text-[#172448] ">You can select multiple dates</label>
-          <input
-            type="date"
-            value={date}
-            placeholder='12-06-2024'
-            onChange={(e) => setDate(e.target.value)}
-            className="w-full border rounded-md p-2"
-          />
-        </div>
+          <div className="mb-6 text-[#172448]">
+            <label className=" mb-2">Assign Shift By</label>
+            <div className="flex items-center gap-4">
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  name="assignType "
+                  value="date"
+                  checked={assignType === 'date'}
+                  onChange={() => setAssignType('date')}
+                  className="mr-2"
+                />
+                Date
+              </label>
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  name="assignType"
+                  value="multiple"
+                  checked={assignType === 'multiple'}
+                  onChange={() => setAssignType('multiple')}
+                  className="mr-2"
+                />
+                Multiple
+              </label>
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  name="assignType"
+                  value="month"
+                  checked={assignType === 'month'}
+                  onChange={() => setAssignType('month')}
+                  className="mr-2 "
+                />
+                Month
+              </label>
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <label className="block mb-2 text-[#172448] ">You can select multiple dates</label>
+            <input
+              type="date"
+              value={date}
+              placeholder='12-06-2024'
+              onChange={(e) => setDate(e.target.value)}
+              className="w-full border rounded-md p-2"
+            />
+          </div>
         </div>
 
         <div className="mb-6">
@@ -126,4 +126,4 @@ import { IoMdCloudUpload } from "react-icons/io";
   );
 }
 
-export default assignshifts;
+export default Assignshifts;
